@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+
+// App contexts (states)
+import { FilterContext, DataContext } from '../../Store';
 
 // App utilities
 import { magColors } from '../../utilities/colors';
@@ -8,7 +11,10 @@ import moment from 'moment';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGl, { Marker, Popup } from 'react-map-gl';
 
-const MapView = ({ data, filter }) => {
+const MapView = () => {
+  const [filter] = useContext(FilterContext);
+  const [data] = useContext(DataContext);
+
   const [mapViewport, setMapViewport] = useState({
     latitude: 46.581314,
     longitude: -107.063199,
@@ -19,7 +25,6 @@ const MapView = ({ data, filter }) => {
     height: '100%'
   });
 
-  // ### POPUPS ###
   const [popup, setPopup] = useState(null);
 
   // Close the Popup when the ESC key is pressed
@@ -43,7 +48,7 @@ const MapView = ({ data, filter }) => {
           const longitude = record.geometry.coordinates[0];
           const latitude = record.geometry.coordinates[1];
 
-          // CHANGE THE CIRCLE'S SIZE DEPENDING ON THE MAGNITUDE
+          // Change the circles radius depending on the magnitude
           const { mag } = record.properties;
           const magSize = Math.floor(mag * 20);
 

@@ -1,35 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 
-// App components
-import MapView from './components/Map/View';
+// App contexts (states)
+import { FilterContext, DataContext } from './Store';
 
 // App services
-import getEarthquakes from './services/earthquakes';
+import getData from './services/earthquakes';
 
 // App utilities
 import { magColors } from './utilities/colors';
 
+// App components
+import MapView from './components/Map/View';
+import FormFilter from './components/Form/Filter';
+
 const App = () => {
-  // ### EARTHQUAKES STATE ###
-  const [earthquakesRecords, setEarthquakesRecords] = useState({
-    records: []
-  });
+  const [filter] = useContext(FilterContext);
+  const [, setData] = useContext(DataContext);
 
-  // ### FORM STATE ###
-  const [filter, setFilter] = useState({ amount: 1, timeRange: 'all_day' });
-
-  // Update the EQ Records State with the data from the API
-  // + passing the time range from the filter as an argument to the getEarthquakes function
+  // Get the data from the API and update the context's state
   useEffect(() => {
-    getEarthquakes(filter.timeRange)
-      .then(records => setEarthquakesRecords({ records }))
+    getData(filter.timeRange)
+      //    ^^^ passing the time range from the filter to load the corresponding data
+      .then(records => setData({ records }))
       .catch(error => console.error(error));
-  }, [filter]);
-
-  const handleChange = event => {
-    const { name, value } = event.target;
-    setFilter({ ...filter, [name]: value });
-  };
+  }, [filter, setData]);
 
   return (
     <div style={{ display: 'flex' }}>
@@ -42,48 +36,8 @@ const App = () => {
         }}
       >
         <h1>Earthquakes records</h1>
-        <h2>Filters</h2>
-        <form>
-          <div>
-            <label htmlFor='amount'>Display range</label>
-            <div>
-              <span>1</span>
-              <input
-                type='range'
-                min='1'
-                max={earthquakesRecords && earthquakesRecords.records.length}
-                value={filter.amount}
-                name='amount'
-                onChange={handleChange}
-              />
-              <span>{earthquakesRecords && earthquakesRecords.records.length}</span>
-            </div>
-          </div>
-          <hr />
-          <div>
-            <label htmlFor='timeRange'>Time range</label>{' '}
-            <div>
-              <select name='timeRange' value={filter.timeRange} onChange={handleChange}>
-                <option value='all_hour'>Past hour</option>
-                <option value='all_day'>Past day</option>
-                <option value='all_week'>Past 7 days</option>
-                <option value='all_month'>Past 30 days</option>
-              </select>
-            </div>
-          </div>
-        </form>
 
-        <hr />
-
-        <p>
-          Displaying <b>{filter.amount}</b> of{' '}
-          <b>{earthquakesRecords && earthquakesRecords.records.length}</b> earthquakes from the past{' '}
-          {(filter.timeRange === 'all_hour' && 'hour') ||
-            (filter.timeRange === 'all_day' && 'day') ||
-            (filter.timeRange === 'all_week' && 'week') ||
-            (filter.timeRange === 'all_month' && 'month')}
-          {'.'}
-        </p>
+        <FormFilter />
 
         <hr />
 
@@ -105,7 +59,7 @@ const App = () => {
       </div>
 
       <div style={{ width: '75vw', height: '100vh' }}>
-        <MapView data={earthquakesRecords} filter={filter} />
+        <MapView />
       </div>
     </div>
   );
