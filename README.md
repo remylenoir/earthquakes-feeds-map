@@ -199,7 +199,7 @@ Please ensure to @import the file in the `./src/stylesheets/main.scss `.
 
 ------
 
-### Future improvments
+### Future improvements
 
 - Add more feeds
 - Refactor the contexts providers logic (to avoid the "wrapper hell")
