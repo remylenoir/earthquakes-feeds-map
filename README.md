@@ -6,15 +6,15 @@ The application allows you to visualize real-time worldwide earthquakes feeds fr
 
 ###Install and run the application
 
-```
+```markdown
 npm i ; npm start
 ```
 
-> By default, the app will start on PORT `3000`
+> By default, the app will start on the `3000` PORT.
 
 You will also need to store a Mapbox public token in a `.env.local` file in order to run the application.
 
-```
+```markdown
 REACT_APP_MAPBOX_TOKEN = yourpublictokenhere
 ```
 
