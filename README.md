@@ -30,16 +30,16 @@ REACT_APP_MAPBOX_TOKEN = yourpublictokenhere
 - SASS
 - BEM, DRY methodologies
 
-------
+
 
 ### Modules
 
 - axios — [GitHub](https://github.com/axios/axios) - [NPM](https://www.npmjs.com/package/axios)
-- moment — [Website]([http://momentjs.com/](http://momentjs.com/)) - [NPM](https://www.npmjs.com/package/moment)
+- moment — [Website](http://momentjs.com/) - [NPM](https://www.npmjs.com/package/moment)
 - react-map-gl — [GitHub](https://github.com/uber/react-map-gl#readme) - [NPM](https://www.npmjs.com/package/react-map-gl) 
 - node-sass — [GitHub](https://github.com/sass/node-sass) - [NPM](https://www.npmjs.com/package/node-sass) 
 
-------
+
 
 ### Code structure
 
@@ -51,7 +51,7 @@ The application is using React hooks:
 
 > More information: [hooks reference](https://reactjs.org/docs/hooks-reference.html)
 
-------
+
 
 ### Data fetching 
 
@@ -59,7 +59,7 @@ The data is fetched using an Axios `GET` request.
 
 > More information: [npm package](https://www.npmjs.com/package/axios)
 
-------
+
 
 ### Feed logic
 
@@ -72,6 +72,8 @@ In the current version, these feeds are available:
 
 > More information: [available feeds](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 
+
+
 ------
 
 
@@ -82,7 +84,7 @@ In the current version, these feeds are available:
 
 ##### Default feed
 
-In the application store located at `./src/Store.js`, the initial feed is set on `all_day` .
+In the application store located at `./src/Store.js`, the initial feed is set to `all_day` .
 
 ```javascript
 // Store.js
@@ -126,7 +128,7 @@ You can add a new feed via the `<select>` tag located at `./src/components/Form/
 ```javascript
 // Field.js
 <select>
-	<option value='all_hour'>Past hour</option>
+  <option value='all_hour'>Past hour</option>
   <option value='all_day'>Past day</option>
   <option value='all_week'>Past 7 days*</option>
   <option value='all_month'>Past 30 days*</option>
@@ -140,8 +142,8 @@ You can add a new feed via the `<select>` tag located at `./src/components/Form/
 
 #### Styling
 
-The application is styled via SASS, and BEM methodology as the naming convention.  
-Using BEM with SASS make the code flow fast and powerful.
+The application is styled via SASS, and using BEM methodology as a naming convention.  
+Combining BEM with SASS make the code flow fast and powerful.
 
 ```scss
 // _mapbox.scss
@@ -167,8 +169,8 @@ The application is using the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pat
 
 ##### Add a SCSS file
 
-You can add a file in the corresponding folders, in `./src/stylesheets/`  
-Please ensure to @import it in the `./src/stylesheets/main.scss ` file.
+You can add a file in the corresponding folders, in `./src/stylesheets/`.  
+Please ensure to @import the file in the `./src/stylesheets/main.scss `.
 
 ```scss
 // main.scss
@@ -195,3 +197,10 @@ Please ensure to @import it in the `./src/stylesheets/main.scss ` file.
 @import './vendors/mapbox';
 ```
 
+------
+
+### Future improvments
+
+- Add more feeds
+- Refactor the contexts providers logic (to avoid the "wrapper hell")
+- Mobile responsiveness
