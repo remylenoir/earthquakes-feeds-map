@@ -1,5 +1,7 @@
 # :world_map: Earthquakes Feeds Map
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0231bf36a79549ab8346d486e721db3b)](https://app.codacy.com/app/remylenoir/earthquakes-feeds-map?utm_source=github.com&utm_medium=referral&utm_content=remylenoir/earthquakes-feeds-map&utm_campaign=Badge_Grade_Dashboard)
+
 ## Introduction
 
 The application allows you to visualize real-time worldwide earthquakes feeds from [USGS](https://www.usgs.gov/natural-hazards/earthquake-hazards/earthquakes). 
