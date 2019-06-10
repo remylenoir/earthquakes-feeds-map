@@ -201,6 +201,6 @@ Please ensure to @import the file in the `./src/stylesheets/main.scss `.
 
 ### Future improvements
 
-- Add more feeds
+- Add more feeds/filters
 - Refactor the contexts providers logic (to avoid the "wrapper hell")
 - Mobile responsiveness
