@@ -23,27 +23,24 @@ REACT_APP_MAPBOX_TOKEN = yourpublictokenhere
 ------
 
 ###Technologies & methodologies
-
-  - Node JS
-  - React
-  - React Map GL (Mapbox),
-  - SASS
-  - BEM, DRY methodologies
+* Node JS
+* React
+* React Map GL (Mapbox),
+* SASS
+* BEM, DRY methodologies
 
 ###Modules
-
-  - axios — [GitHub](https://github.com/axios/axios) | [NPM](https://www.npmjs.com/package/axios)
-  - moment — [Website](http://momentjs.com/) | [NPM](https://www.npmjs.com/package/moment)
-  - react-map-gl — [GitHub](https://github.com/uber/react-map-gl#readme) | [NPM](https://www.npmjs.com/package/react-map-gl) 
-  - node-sass — [GitHub](https://github.com/sass/node-sass) | [NPM](https://www.npmjs.com/package/node-sass) 
+* axios — [GitHub](https://github.com/axios/axios) | [NPM](https://www.npmjs.com/package/axios)
+* moment — [Website](http://momentjs.com/) | [NPM](https://www.npmjs.com/package/moment)
+* react-map-gl — [GitHub](https://github.com/uber/react-map-gl#readme) | [NPM](https://www.npmjs.com/package/react-map-gl) 
+* node-sass — [GitHub](https://github.com/sass/node-sass) | [NPM](https://www.npmjs.com/package/node-sass) 
 
 ###Code structure
 
 The application is using React hooks:
-
-  - `useState()`
-  - `useEffect()`
-  - `useContext()`
+* `useState()`
+* `useEffect()`
+* `useContext()`
 
 > More information: [hooks reference](https://reactjs.org/docs/hooks-reference.html)
 
@@ -56,11 +53,10 @@ The data is fetched using an Axios `GET` request.
 ###Feed logic
 
 In the current version, these feeds are available:
-
-  - Past Hour: `all_hour`
-  - Past Day: `all_day`
-  - Past Week: `all_week`
-  - Past Month: `all_month`
+* Past Hour: `all_hour`
+* Past Day: `all_day`
+* Past Week: `all_week`
+* Past Month: `all_month`
 
 > More information: [available feeds](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 
@@ -188,7 +184,6 @@ Please ensure to @import the file in the `./src/stylesheets/main.scss`.
 ------
 
 ##Future improvements
-
-  - Add more feeds/filters
-  - Refactor the contexts providers logic (to avoid the "wrapper hell")
-  - Mobile responsiveness
+* Add more feeds/filters
+* Refactor the contexts providers logic (to avoid the "wrapper hell")
+* Mobile responsiveness
