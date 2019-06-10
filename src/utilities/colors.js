@@ -1,5 +1,5 @@
 export const magColors = {
-  mag0: '#fff',
+  mag0: '#ebebeb',
   mag1: '#ffffaf',
   mag2: '#fffe4b',
   mag3: '#feff01',

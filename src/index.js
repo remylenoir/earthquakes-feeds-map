@@ -7,10 +7,11 @@ import App from './App';
 // App store
 import Store from './Store';
 
+// App style
+import './stylesheets/main.scss';
+
 // App services
 import * as serviceWorker from './services/serviceWorker';
-
-import './index.css';
 
 const Index = () => (
   <Store>

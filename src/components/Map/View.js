@@ -1,47 +1,44 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 
 // App contexts (states)
-import { FilterContext, DataContext } from '../../Store';
+import { FilterContext, DataContext, MapContext, PopupContext } from '../../Store';
+
+// App components
+import MapPopup from './Popup';
 
 // App utilities
 import { magColors } from '../../utilities/colors';
 
 // External packages
-import moment from 'moment';
+import ReactMapGl, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import ReactMapGl, { Marker, Popup } from 'react-map-gl';
 
 const MapView = () => {
   const [filter] = useContext(FilterContext);
   const [data] = useContext(DataContext);
+  const [viewport, setViewport] = useContext(MapContext);
+  const [, setPopup] = useContext(PopupContext);
 
-  const [mapViewport, setMapViewport] = useState({
-    latitude: 46.581314,
-    longitude: -107.063199,
-    zoom: 2.4,
-    bearing: 0,
-    pitch: 0,
-    width: '100%',
-    height: '100%'
-  });
+  // Auto resize logic for react-map-gl
+  const _resize = () => {
+    setViewport({
+      ...viewport,
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+  };
 
-  const [popup, setPopup] = useState(null);
-
-  // Close the Popup when the ESC key is pressed
   useEffect(() => {
-    const listener = event => {
-      if (event.key === 'Escape') {
-        setPopup(null);
-      }
-    };
-    window.addEventListener('keydown', listener);
+    window.addEventListener('resize', _resize);
+    _resize();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <ReactMapGl
-      {...mapViewport}
+      {...viewport}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-      onViewportChange={mapViewport => setMapViewport(mapViewport)}
+      onViewportChange={viewport => setViewport(viewport)}
     >
       {data &&
         data.records.slice(0, filter.amount).map(record => {
@@ -55,27 +52,17 @@ const MapView = () => {
           return (
             <Marker key={record.id} latitude={latitude} longitude={longitude}>
               <div
-                style={{
-                  border: 'none',
-                  background: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '80%'
-                }}
+                className='d-flex map-marker'
                 onClick={event => {
                   event.preventDefault();
                   setPopup(record);
                 }}
               >
                 <div
+                  className='position-absolute p-20 radius-50'
                   style={{
                     width: magSize,
                     height: magSize,
-                    borderRadius: '50%',
-                    padding: '20px',
-                    position: 'absolute',
                     backgroundColor:
                       mag <= 2
                         ? magColors.mag1
@@ -105,33 +92,7 @@ const MapView = () => {
           );
         })}
 
-      {popup ? (
-        <Popup
-          latitude={popup.geometry.coordinates[1]}
-          longitude={popup.geometry.coordinates[0]}
-          onClose={() => setPopup(null)}
-          tipSize={15}
-          offsetTop={-8}
-          offsetLeft={12}
-        >
-          <div>
-            <div>
-              When:{' '}
-              {moment(popup.properties.time)
-                .startOf('min')
-                .fromNow()}
-            </div>
-            <div>Where: {popup.properties.place}</div>
-            <div>Mag: {popup.properties.mag}</div>
-            <div>Type: {popup.properties.type}</div>
-            <div>
-              <a href={popup.properties.url} target='blank'>
-                More details
-              </a>
-            </div>
-          </div>
-        </Popup>
-      ) : null}
+      <MapPopup />
     </ReactMapGl>
   );
 };

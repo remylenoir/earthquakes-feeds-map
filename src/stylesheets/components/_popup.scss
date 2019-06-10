@@ -1,0 +1,32 @@
+.popup {
+  &__header {
+    height: $popup-header;
+    color: #fff;
+    padding: 3px 10px;
+    background-color: darkcyan;
+  }
+  &__inner {
+    padding: 10px;
+  }
+  &__link {
+    margin-top: 7px;
+
+    a {
+      width: $popup-header;
+      height: $popup-header;
+      padding: 13px;
+      font-size: 1.3rem;
+      color: darkcyan;
+      border-radius: 50%;
+      border: 2px solid darkcyan;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+}
