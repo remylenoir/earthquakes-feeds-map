@@ -7,7 +7,7 @@ import { FilterContext, DataContext, MapContext, PopupContext } from '../../Stor
 import MapPopup from './Popup';
 
 // App utilities
-import { magColors } from '../../utilities/colors';
+import { magColors } from '../../utilities/Colors/magnitude';
 
 // External packages
 import ReactMapGl, { Marker } from 'react-map-gl';

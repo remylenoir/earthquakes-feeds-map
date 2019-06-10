@@ -1,7 +1,7 @@
 import React from 'react';
 
 // App utilities
-import { magColors } from '../../utilities/colors';
+import { magColors } from '../../utilities/Colors/magnitude';
 
 const SidebarLegend = () => {
   return (
