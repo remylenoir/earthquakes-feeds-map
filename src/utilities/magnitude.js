@@ -1,4 +1,4 @@
-export const magColors = {
+export const colors = {
   mag0: '#ebebeb',
   mag1: '#ffffaf',
   mag2: '#fffe4b',

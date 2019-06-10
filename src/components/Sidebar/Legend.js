@@ -1,7 +1,7 @@
 import React from 'react';
 
 // App utilities
-import { magColors } from '../../utilities/Colors/magnitude';
+import { colors } from '../../utilities/magnitude';
 
 const SidebarLegend = () => {
   return (
@@ -19,34 +19,34 @@ const SidebarLegend = () => {
         </small>{' '}
       </label>
       <div className='filter__legend-container'>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag0 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag0 }}>
           &lt; 1
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag1 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag1 }}>
           Between 1 and 2
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag2 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag2 }}>
           Between 2 and 3
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag3 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag3 }}>
           Between 3 and 4
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag4 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag4 }}>
           Between 4 and 5
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag5 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag5 }}>
           Between 5 and 6
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag6 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag6 }}>
           Between 6 and 7
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag7 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag7 }}>
           Between 7 and 8
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag8 }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag8 }}>
           Between 8 and 9
         </div>
-        <div className='filter__legend-line' style={{ backgroundColor: magColors.mag9, color: '#fff' }}>
+        <div className='filter__legend-line' style={{ backgroundColor: colors.mag9, color: '#fff' }}>
           &gt; 9
         </div>
       </div>

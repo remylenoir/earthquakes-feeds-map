@@ -7,7 +7,7 @@ import { FilterContext, DataContext, MapContext, PopupContext } from '../../Stor
 import MapPopup from './Popup';
 
 // App utilities
-import { magColors } from '../../utilities/Colors/magnitude';
+import { colors } from '../../utilities/magnitude';
 
 // External packages
 import ReactMapGl, { Marker } from 'react-map-gl';
@@ -65,24 +65,24 @@ const MapView = () => {
                     height: magSize,
                     backgroundColor:
                       mag <= 2
-                        ? magColors.mag1
+                        ? colors.mag1
                         : mag >= 2 && mag <= 3
-                        ? magColors.mag2
+                        ? colors.mag2
                         : mag >= 3 && mag <= 4
-                        ? magColors.mag3
+                        ? colors.mag3
                         : mag >= 4 && mag <= 5
-                        ? magColors.mag4
+                        ? colors.mag4
                         : mag >= 5 && mag <= 6
-                        ? magColors.mag5
+                        ? colors.mag5
                         : mag >= 6 && mag <= 7
-                        ? magColors.mag6
+                        ? colors.mag6
                         : mag >= 7 && mag <= 8
-                        ? magColors.mag7
+                        ? colors.mag7
                         : mag >= 8 && mag <= 9
-                        ? magColors.mag8
+                        ? colors.mag8
                         : mag >= 9
-                        ? magColors.mag9
-                        : magColors.mag0,
+                        ? colors.mag9
+                        : colors.mag0,
                     opacity: 0.3
                   }}
                 />
