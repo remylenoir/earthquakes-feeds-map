@@ -1,10 +1,10 @@
-#:world_map: Earthquakes Feeds Map
+# :world_map: Earthquakes Feeds Map
 
-##Introduction
+## Introduction
 
 The application allows you to visualize real-time worldwide earthquakes feeds from [USGS](https://www.usgs.gov/natural-hazards/earthquake-hazards/earthquakes). 
 
-###Install and run the application
+### Install and run the application
 
 ```markdown
 npm i ; npm start
@@ -22,20 +22,20 @@ REACT_APP_MAPBOX_TOKEN = yourpublictokenhere
 
 ------
 
-###Technologies & methodologies
+### Technologies & methodologies
 * Node JS
 * React
 * React Map GL (Mapbox),
 * SASS
 * BEM, DRY methodologies
 
-###Modules
+### Modules
 * axios — [GitHub](https://github.com/axios/axios) | [NPM](https://www.npmjs.com/package/axios)
 * moment — [Website](http://momentjs.com/) | [NPM](https://www.npmjs.com/package/moment)
 * react-map-gl — [GitHub](https://github.com/uber/react-map-gl#readme) | [NPM](https://www.npmjs.com/package/react-map-gl) 
 * node-sass — [GitHub](https://github.com/sass/node-sass) | [NPM](https://www.npmjs.com/package/node-sass) 
 
-###Code structure
+### Code structure
 
 The application is using React hooks:
 * `useState()`
@@ -44,13 +44,13 @@ The application is using React hooks:
 
 > More information: [hooks reference](https://reactjs.org/docs/hooks-reference.html)
 
-###Data fetching 
+### Data fetching 
 
 The data is fetched using an Axios `GET` request.
 
 > More information: [npm package](https://www.npmjs.com/package/axios)
 
-###Feed logic
+### Feed logic
 
 In the current version, these feeds are available:
 * Past Hour: `all_hour`
@@ -62,11 +62,11 @@ In the current version, these feeds are available:
 
 ------
 
-##Documentation
+## Documentation
 
-###Feed
+### Feed
 
-####Default feed
+#### Default feed
 
 In the application store located at `./src/Store.js`, the initial feed is set to `all_day`.
 
@@ -75,7 +75,7 @@ In the application store located at `./src/Store.js`, the initial feed is set to
 const [filter, setFilter] = useState({ range: 3, timeRange: 'all_day' });
 ```
 
-####Get and store the data
+#### Get and store the data
 
 The `getData()` function is located at `./src/services/earthquakes.js`.
 
@@ -105,7 +105,7 @@ useEffect(() => {
   }, [filter, setData]);
 ```
 
-####Add a feed
+#### Add a feed
 
 You can add a new feed via the `<select>` tag located at `./src/components/Form/Filter.js`.
 
@@ -124,7 +124,7 @@ You can add a new feed via the `<select>` tag located at `./src/components/Form/
 
 ------
 
-###Styling
+### Styling
 
 The application is styled via SASS, and using BEM methodology as a naming convention.  
 Combining BEM with SASS make the code flow fast and powerful.
@@ -147,11 +147,11 @@ Combining BEM with SASS make the code flow fast and powerful.
 
 > More information: [SASS guidelines](https://sass-guidelin.es/) — [BEM methodology](https://en.bem.info/methodology/)
 
-####Structure
+#### Structure
 
 The application is using the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern).
 
-####Add a SCSS file
+#### Add a SCSS file
 
 You can add a file in the corresponding folders, in `./src/stylesheets/`.  
 Please ensure to @import the file in the `./src/stylesheets/main.scss`.
@@ -183,7 +183,7 @@ Please ensure to @import the file in the `./src/stylesheets/main.scss`.
 
 ------
 
-##Future improvements
+## Future improvements
 * Add more feeds/filters
 * Refactor the contexts providers logic (to avoid the "wrapper hell")
 * Mobile responsiveness
