@@ -53,11 +53,11 @@ const FormFilter = () => {
             >
               <option value='all_hour'>Past hour</option>
               <option value='all_day'>Past day</option>
-              <option value='all_week'>Past 7 days</option>
-              <option value='all_month'>Past 30 days</option>
+              <option value='all_week'>Past 7 days*</option>
+              <option value='all_month'>Past 30 days*</option>
             </select>
             <small className='d-inline-block w-100'>
-              <em>Some data may take a few seconds to load</em>
+              <em>* May take a few seconds to load</em>
             </small>
           </div>
         </div>

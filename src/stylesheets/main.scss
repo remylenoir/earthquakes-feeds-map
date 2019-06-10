@@ -1,7 +1,7 @@
 // Base: global styles (resets, typography, colors, etc)
-@import './base/reset';
 @import './base/variables';
 @import './base/typography';
+@import './base/reset';
 
 // Utils: global mixins, functions, helper selectors, etc
 @import './utils/helper';

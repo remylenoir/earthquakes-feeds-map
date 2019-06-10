@@ -3,7 +3,7 @@
     height: $popup-header;
     color: #fff;
     padding: 3px 10px;
-    background-color: darkcyan;
+    background-color: $primary-color;
   }
   &__inner {
     padding: 10px;
@@ -16,9 +16,9 @@
       height: $popup-header;
       padding: 13px;
       font-size: 1.3rem;
-      color: darkcyan;
+      color: $primary-color;
       border-radius: 50%;
-      border: 2px solid darkcyan;
+      border: 2px solid $primary-color;
       text-decoration: none;
       align-items: center;
       justify-content: center;

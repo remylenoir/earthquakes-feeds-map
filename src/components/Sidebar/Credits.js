@@ -12,8 +12,9 @@ const SidebarCredits = () => {
           target='_blank'
         >
           USGS
-        </a>
-        .
+        </a>{' '}
+        <br />
+        Updated every minute.
       </p>
     </>
   );

@@ -6,7 +6,18 @@ import { magColors } from '../../utilities/colors';
 const SidebarLegend = () => {
   return (
     <>
-      <label className='d-inline-block w-100'>Legend:</label>
+      <label className='d-inline-block w-100'>
+        Legend:{' '}
+        <small>
+          <a
+            href='https://en.wikipedia.org/wiki/Richter_magnitude_scale#Richter_magnitudes'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            More information
+          </a>
+        </small>{' '}
+      </label>
       <div className='filter__legend-container'>
         <div className='filter__legend-line' style={{ backgroundColor: magColors.mag0 }}>
           &lt; 1
