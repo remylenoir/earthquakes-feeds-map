@@ -41,7 +41,7 @@ const MapView = () => {
       onViewportChange={viewport => setViewport(viewport)}
     >
       {data &&
-        data.records.slice(0, filter.amount).map(record => {
+        data.records.slice(0, filter.range).map(record => {
           const longitude = record.geometry.coordinates[0];
           const latitude = record.geometry.coordinates[1];
 

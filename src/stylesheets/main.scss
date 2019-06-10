@@ -1,18 +1,18 @@
+// Abstracts: global variables, helpers, mixins, etc.
+@import './abstracts/helpers';
+@import './abstracts/variables';
+
 // Base: global styles (resets, typography, colors, etc)
-@import './base/variables';
-@import './base/typography';
 @import './base/reset';
-
-// Utils: global mixins, functions, helper selectors, etc
-@import './utils/helper';
-
-// Layout: styling for layout components (nav, header, footer, etc)
-@import './layout/sidebar';
+@import './base/typography';
 
 // Components: styling for each components
 @import './components/map';
 @import './components/popup';
-@import './components/filter';
+
+// Layout: styling for layout components (nav, header, footer, etc)
+@import './layout/form';
+@import './layout/sidebar';
 
 // Pages: page-specific styling
 @import './pages/home';

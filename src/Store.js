@@ -7,8 +7,7 @@ export const MapContext = createContext();
 export const PopupContext = createContext();
 
 const Store = ({ children }) => {
-  // Create the initial states and functions
-  const [filter, setFilter] = useState({ amount: 3, timeRange: 'all_day' });
+  const [filter, setFilter] = useState({ range: 3, timeRange: 'all_day' });
 
   const [data, setData] = useState({
     records: []

@@ -22,8 +22,8 @@ const FormFilter = () => {
       <form>
         <Heading2>Filters</Heading2>
         <div className='filter__type'>
-          <label htmlFor='amount' className='d-inline-block w-100'>
-            Display range: {filter && filter.amount} / {data && data.records.length}
+          <label htmlFor='range' className='d-inline-block w-100'>
+            Display range: {filter && filter.range} / {data && data.records.length}
           </label>
           <div>
             <input
@@ -31,8 +31,8 @@ const FormFilter = () => {
               type='range'
               min='3'
               max={data && data.records.length}
-              value={filter.amount}
-              name='amount'
+              value={filter.range}
+              name='range'
               onChange={handleChange}
             />
           </div>
@@ -71,7 +71,7 @@ const FormFilter = () => {
         <hr />
 
         <p>
-          Displaying <b>{filter.amount}</b> earthquakes from&nbsp;the&nbsp;
+          Displaying <b>{filter.range}</b> earthquakes from&nbsp;the&nbsp;
           <b>
             past{' '}
             {(filter.timeRange === 'all_hour' && 'hour') ||
