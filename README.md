@@ -84,7 +84,7 @@ In the current version, these feeds are available:
 
 ##### Default feed
 
-In the application store located at `./src/Store.js`, the initial feed is set to `all_day` .
+In the application store located at `./src/Store.js`, the initial feed is set to `all_day`.
 
 ```javascript
 // Store.js
