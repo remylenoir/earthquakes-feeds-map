@@ -123,10 +123,10 @@ useEffect(() => {
 
 ##### Add a feed
 
-You can add a new feed via the `<select>` tag located at `./src/components/Form/Field.js`.
+You can add a new feed via the `<select>` tag located at `./src/components/Form/Filter.js`.
 
 ```javascript
-// Field.js
+// Filter.js
 <select>
   <option value='all_hour'>Past hour</option>
   <option value='all_day'>Past day</option>
@@ -170,7 +170,7 @@ The application is using the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pat
 ##### Add a SCSS file
 
 You can add a file in the corresponding folders, in `./src/stylesheets/`.  
-Please ensure to @import the file in the `./src/stylesheets/main.scss `.
+Please ensure to @import the file in the `./src/stylesheets/main.scss`.
 
 ```scss
 // main.scss
