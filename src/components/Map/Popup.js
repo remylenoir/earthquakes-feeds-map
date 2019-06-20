@@ -23,9 +23,9 @@ const MapPopup = () => {
     window.addEventListener('keydown', listener);
   }, [setPopup]);
 
-  return (
-    <>
-      {popup ? (
+  const renderPopup = () => {
+    return (
+      popup && (
         <Popup
           latitude={popup.geometry.coordinates[1]}
           longitude={popup.geometry.coordinates[0]}
@@ -55,9 +55,11 @@ const MapPopup = () => {
             </div>
           </div>
         </Popup>
-      ) : null}
-    </>
-  );
+      )
+    );
+  };
+
+  return renderPopup();
 };
 
 export default MapPopup;
