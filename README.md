@@ -46,6 +46,36 @@ The application is using React hooks:
 
 > More information: [hooks reference](https://reactjs.org/docs/hooks-reference.html)
 
+### Application states
+
+The application states are set in the `./Store.js`  , using the React Context API. Thus you can access to the states from anywhere in your application without the hassle to pass down the props/lift up the states in the components.
+
+```javascript
+// Store.js
+export const DataContext = createContext();
+
+const Store = ({ children }) => {
+  const [data, setData] = useState({
+    records: []
+  });
+});
+
+return (
+  <DataContext.Provider value={[data, setData]}>{children}</DataContext.Provider>
+);
+```
+
+```javascript
+// index.js
+import Store from './Store';
+
+<Store>
+	<App />
+</Store>
+```
+
+> More information: [Context API reference](https://reactjs.org/docs/context.html)
+
 ### Data fetching 
 
 The data is fetched using an Axios `GET` request.
