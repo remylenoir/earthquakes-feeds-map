@@ -4,6 +4,30 @@ import React from 'react';
 import { colors } from '../../utilities/magnitude';
 
 const SidebarLegend = () => {
+  const legendColors = colors.map((color, index) => {
+    const className = 'filter__legend-line';
+
+    if (index === 0) {
+      return (
+        <div key={index} className={className} style={{ backgroundColor: color }}>
+          &lt; {index}
+        </div>
+      );
+    } else if (index === 9) {
+      return (
+        <div key={index} className={className} style={{ backgroundColor: color, color: '#fff' }}>
+          &gt; {index}
+        </div>
+      );
+    } else {
+      return (
+        <div key={index} className={className} style={{ backgroundColor: color }}>
+          Between {index} and {index + 1}
+        </div>
+      );
+    }
+  });
+
   return (
     <>
       <label className='d-inline-block w-100'>
@@ -18,38 +42,7 @@ const SidebarLegend = () => {
           </a>
         </small>{' '}
       </label>
-      <div className='filter__legend-container'>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag0 }}>
-          &lt; 1
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag1 }}>
-          Between 1 and 2
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag2 }}>
-          Between 2 and 3
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag3 }}>
-          Between 3 and 4
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag4 }}>
-          Between 4 and 5
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag5 }}>
-          Between 5 and 6
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag6 }}>
-          Between 6 and 7
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag7 }}>
-          Between 7 and 8
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag8 }}>
-          Between 8 and 9
-        </div>
-        <div className='filter__legend-line' style={{ backgroundColor: colors.mag9, color: '#fff' }}>
-          &gt; 9
-        </div>
-      </div>
+      <div className='filter__legend-container'>{legendColors}</div>
     </>
   );
 };

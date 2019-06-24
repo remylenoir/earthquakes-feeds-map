@@ -19,6 +19,13 @@ const MapView = () => {
   const [viewport, setViewport] = useContext(MapContext);
   const [, setPopup] = useContext(PopupContext);
 
+  // Assign the color to the circles on the map depending on the magnitude
+  const color = input => {
+    const integerNumber = parseInt(input);
+    const legendColors = colors.map(color => color);
+    return legendColors[integerNumber];
+  };
+
   // Auto resize logic for react-map-gl
   const _resize = () => {
     setViewport({
@@ -63,30 +70,11 @@ const MapView = () => {
                   style={{
                     width: magSize,
                     height: magSize,
-                    backgroundColor:
-                      mag <= 2
-                        ? colors.mag1
-                        : mag >= 2 && mag <= 3
-                        ? colors.mag2
-                        : mag >= 3 && mag <= 4
-                        ? colors.mag3
-                        : mag >= 4 && mag <= 5
-                        ? colors.mag4
-                        : mag >= 5 && mag <= 6
-                        ? colors.mag5
-                        : mag >= 6 && mag <= 7
-                        ? colors.mag6
-                        : mag >= 7 && mag <= 8
-                        ? colors.mag7
-                        : mag >= 8 && mag <= 9
-                        ? colors.mag8
-                        : mag >= 9
-                        ? colors.mag9
-                        : colors.mag0,
+                    backgroundColor: color(mag),
                     opacity: 0.3
                   }}
                 />
-                <div>{mag}</div>
+                <div>{mag.toFixed(1)}</div>
               </div>
             </Marker>
           );
