@@ -20,7 +20,7 @@ const MapView = () => {
   const [, setPopup] = useContext(PopupContext);
 
   // Assign the color to the circles on the map depending on the magnitude
-  const color = input => {
+  const magColor = input => {
     const integerNumber = parseInt(input);
     const legendColors = colors.map(color => color);
     return legendColors[integerNumber];
@@ -70,7 +70,7 @@ const MapView = () => {
                   style={{
                     width: magSize,
                     height: magSize,
-                    backgroundColor: color(mag),
+                    backgroundColor: magColor(mag),
                     opacity: 0.3
                   }}
                 />
