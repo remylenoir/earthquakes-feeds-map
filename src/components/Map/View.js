@@ -20,10 +20,7 @@ const MapView = () => {
   const [, setPopup] = useContext(PopupContext);
 
   // Assign the color to the circles on the map depending on the magnitude
-  const magColor = input => {
-    const integerNumber = Math.round(input);
-    return colors[integerNumber];
-  };
+  const pickColor = (input, source) => source[Math.round(input)];
 
   // Auto resize logic for react-map-gl
   const _resize = () => {
@@ -69,7 +66,7 @@ const MapView = () => {
                   style={{
                     width: magSize,
                     height: magSize,
-                    backgroundColor: magColor(mag),
+                    backgroundColor: pickColor(mag, colors),
                     opacity: 0.3
                   }}
                 />
