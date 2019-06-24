@@ -36,7 +36,9 @@ const MapPopup = () => {
         >
           <div className='popup'>
             <div className='popup__header'>
-              <Heading4 className='m-0 text-center'>Magnitude: {popup.properties.mag}</Heading4>
+              <Heading4 className='m-0 text-center'>
+                Magnitude: {popup.properties.mag.toFixed(1)}
+              </Heading4>
             </div>
             <div className='popup__inner'>
               <p className='m-0'>

@@ -21,9 +21,8 @@ const MapView = () => {
 
   // Assign the color to the circles on the map depending on the magnitude
   const magColor = input => {
-    const integerNumber = parseInt(input);
-    const legendColors = colors.map(color => color);
-    return legendColors[integerNumber];
+    const integerNumber = Math.round(input);
+    return colors[integerNumber];
   };
 
   // Auto resize logic for react-map-gl
