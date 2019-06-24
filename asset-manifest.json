@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/earthquakes-feeds-map/static/css/main.d8311ff5.chunk.css",
-    "main.js": "/earthquakes-feeds-map/static/js/main.f28d279b.chunk.js",
-    "main.js.map": "/earthquakes-feeds-map/static/js/main.f28d279b.chunk.js.map",
+    "main.js": "/earthquakes-feeds-map/static/js/main.f19e0b51.chunk.js",
+    "main.js.map": "/earthquakes-feeds-map/static/js/main.f19e0b51.chunk.js.map",
     "runtime~main.js": "/earthquakes-feeds-map/static/js/runtime~main.9d6202bc.js",
     "runtime~main.js.map": "/earthquakes-feeds-map/static/js/runtime~main.9d6202bc.js.map",
     "static/css/2.2614ebd1.chunk.css": "/earthquakes-feeds-map/static/css/2.2614ebd1.chunk.css",
     "static/js/2.4867bfae.chunk.js": "/earthquakes-feeds-map/static/js/2.4867bfae.chunk.js",
     "static/js/2.4867bfae.chunk.js.map": "/earthquakes-feeds-map/static/js/2.4867bfae.chunk.js.map",
     "index.html": "/earthquakes-feeds-map/index.html",
-    "precache-manifest.7f2d3c80da3538ee5079232dc172b21b.js": "/earthquakes-feeds-map/precache-manifest.7f2d3c80da3538ee5079232dc172b21b.js",
+    "precache-manifest.f2f20d41d516158f3245cb68267d98c4.js": "/earthquakes-feeds-map/precache-manifest.f2f20d41d516158f3245cb68267d98c4.js",
     "service-worker.js": "/earthquakes-feeds-map/service-worker.js",
     "static/css/2.2614ebd1.chunk.css.map": "/earthquakes-feeds-map/static/css/2.2614ebd1.chunk.css.map",
     "static/css/main.d8311ff5.chunk.css.map": "/earthquakes-feeds-map/static/css/main.d8311ff5.chunk.css.map"

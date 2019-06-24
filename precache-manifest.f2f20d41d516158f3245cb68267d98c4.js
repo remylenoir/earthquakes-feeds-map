@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8698912912a0a17e11be4168fc9f0858",
+    "revision": "8d100192f909f58754e2a6209e68be87",
     "url": "/earthquakes-feeds-map/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/earthquakes-feeds-map/static/css/2.2614ebd1.chunk.css"
   },
   {
-    "revision": "a04d1b12d2ef8ce9bbc7",
+    "revision": "dca87b16bb31b1094631",
     "url": "/earthquakes-feeds-map/static/css/main.d8311ff5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/earthquakes-feeds-map/static/js/2.4867bfae.chunk.js"
   },
   {
-    "revision": "a04d1b12d2ef8ce9bbc7",
-    "url": "/earthquakes-feeds-map/static/js/main.f28d279b.chunk.js"
+    "revision": "dca87b16bb31b1094631",
+    "url": "/earthquakes-feeds-map/static/js/main.f19e0b51.chunk.js"
   },
   {
     "revision": "a5f9bee21ad814d77e78",
